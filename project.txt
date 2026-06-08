@@ -1,0 +1,272 @@
+Introduction
+Navbars are an essential part of web applications. Almost each and every website in the world has a navbar. Different websites have different structures and designs for navbars.
+
+image
+
+
+QTify Navbar
+Our QTify application also needs a Navbar, and it must look as follows:
+
+image
+
+The Navbar component is made up of other components within it:
+
+Logo
+
+Search bar
+
+Button
+
+Implementation Requirements for Navbar:
+Copy-paste the code for the Navbar component (including the CSS) from the provided stubs into your local project files.
+
+
+QTify Logo
+Just like other Music apps, our QTify too has its own unique logo designed by our Logo maker. You being a frontend developer, need to include this logo on the Navbar of our QTify web application.
+
+image
+
+As we know, the logos of applications keep changing from time to time. Hence, we must have Logo as a separate component instead of just having it in an img tag.
+
+image
+
+Implementation Requirements for Logo:
+Export the Logo from the Figma file given for QTify and store it in the assets folder in the project directory maintained for QTify.
+
+Copy-paste the code for the Logo component from the provided stubs into your local project files.
+
+
+Search bar
+Search bar plays an important role in any website. It allows the users to seach for particular piece fo data in the website and provides a good user experience.
+
+Implementation Key Points for Search bar:
+Copy-paste the code for the Search component (including the CSS) from the provided stubs into your local project files.
+
+
+Feedback Button
+For any business, it is crucial to know what their customers think about their product. Hence, collecting user feedback is a critical aspect for any customer-centric business. We at QTify also value our users’ feedback a lot.
+
+So, we want you as our frontend developer to build a button clearly visible on the Navbar itself for users to give feedback.
+
+Implementation Requirements for Button:
+Create a separate component for the Button. It must look as follows
+image
+
+The button must have the following text "Give Feedback". Make use of the Poppins font.
+
+It must be a **re-usable component **i.e. you must be able to use this component to make other similar buttons as well in QTify, but with different text.
+
+Make use of Module-scoped CSS for styling the Button component.
+
+Upon hovering the mouse over the button, the cursor must turn into a pointer.
+
+It must have a border radius.
+
+The background color must be black and the text color must be green just as the color code mentioned in the 1st page of the Figma file. Make use of CSS variables for defining the colors.
+
+
+Hero Section
+As the first thing people see when they visit your website, a hero section is the area that immediately shows up on the screen under your navbar. This section must include the main catchy information about your product that you want the users to know.
+
+
+As a frontend developer at QTify, you must develop the hero section as below:
+
+
+image
+
+
+Activity
+Get the headphones image exported from the Figma file.
+
+Copy-paste the code for the Hero Section component (including the CSS) from the provided stubs into your local project files.
+
+
+image
+Deploy your latest implementation
+Don’t forget to push your latest code to your QTify GitHub repository and make sure your deployed Vercel link has the latest implementation including the components you built in this module.
+
+
+Test your implementation
+It is **mandatory **to run the assessment script before you push your code for assessment.
+
+Create a new file called submit.txt. This file must be in your project folder, do not create any separate folder for it.
+image
+
+Paste your deployed link in the submit.txt. There should be nothing else in this file except your project link.
+
+Run the runAssessment.sh script to run the integration tests present in the assessment folder.
+
+
+cd ~/workspace/leelasai808-ME_BUILDOUT_QTIFY_V2
+
+chmod +x run_assessment.sh
+
+./run_assessment.sh
+
+When you run this for the first time, it will take some time, and your terminal look as shown below for some time. Please be patient for 5 minutes.
+image
+
+If you don’t get any assessment results even after 5 minutes, please kill the terminal.
+image
+
+Then, open a new terminal and re-run the commands to run the assessment. This time it will run within a minute. You must get TEST_STATUS_SUCCESS if you have implemented the required components in the required manner.
+image
+
+If any of the test cases are failing, make sure that the particular part being tested looks and works as shown in the Figma design and is implemented in the required way with all the good practices covered in the session. Move to the next milestone if all of your test cases are passing.
+
+
+
+
+
+
+
+Card Component
+Cards are surfaces that display content and actions on a single topic. In our case, we will make use of Card component to display the information about an album.
+
+Here is an example of how a single card must display information about an album.
+
+image
+
+As you might have noticed in the Figma design, the card is being used in multiple places with the same structure and design. Hence, the Card component must be designed as a re-usable React component.
+
+Implementation Requirements for Card:
+Create a Card component that displays the following information about albums:
+
+Album image
+
+Number of follows
+
+Album name
+
+For now, just create a single simple card by using any dummy image and text. We can add the actual API data later.
+
+Make use of the Chip from Material UI to build and use the chip inside the card to show the number of follows.
+
+The chip must have a similar size, padding, and positioning just as shown in the Figma design.
+
+Make sure that the ratio of 'space taken by image':'space taken by bottom section' must be as shown in the Figma design
+
+Make sure that the image is not overflowing outside the Card border.
+
+References
+MUI React Chip
+
+
+Getting the data
+The backend team at QTify has created an API endpoint for returning the data for Top Albums.
+
+In order to get the actual album data that you can use to display via cards, fetch the data from the following API endpoint:
+
+https://qtify-backend.labs.crio.do/albums/top
+
+You can see that the data returned from the API endpoint is in the following format:
+
+image
+
+It contains the id, title, description, follow count, image, slug, and songs within that album.
+
+It contains all this data for 13 such top albums.
+
+Tip
+In case you get a CORS error while making the API call, make use of the Allow CORS extension.
+
+
+Grid of cards
+A Grid of cards is a grid-like layout for displaying multiple cards.
+
+One simple way to display our top albums data is just create a list of all the albums.
+
+But, we want to provide a good UI for our users at QTify. So, instead of a normal list, we can make use of cards to display the information about a single album, and to display data about multiple such albums we can make use of a Grid layout to display multiple cards resulting in a good UI.
+
+image
+
+If you notice in the given Figma design, you’ll see we have multiple sections wherein we have grids: Top Albums and New Albums (clicking on that Show All for New Albums will show a Grid for New Albums, just like it does for Top Albums).
+
+So, we can make a reusable component called a Section for implementing the Grid.
+
+Implementation Requirements for Section:
+Create a reusable component called a Section.
+
+Add the title "Top Albums" and add the “Collapse” button.
+
+Using Axios, fetch data for top albums from the following API endpoint:
+
+https://qtify-backend.labs.crio.do/albums/top
+
+Make use of the reusable Card component to include multiple cards in the Top Albums grid.
+
+To create the grid layout, make use of the CSS Flexbox or Grid.
+
+Make sure that there’s proper horizontal spacing between the Top Albums text and the Collapse button. Also, ensure there is proper vertical spacing between the Top Albums text and the Grid, as shown in the Figma design.
+
+Introduction
+You’ll build a smooth Carousel using a UI library and make it appear conditionally with the grid of cards.
+
+
+Carousel
+Carousel allows the users to view a group of content (in our case, Album Cards) from start to end or even cycle through it(i.e. end is again connected to the start).
+
+For our QTify, we would be building a Carousel that lets the users view a group of Album cards at a time, and then slide to the left or right to view more cards. We won’t make it cyclic, so once the user reaches the last card, the right navigation button will vanish. Similarly, we will build for the left navigation as well.
+
+Implementation Requirements for Top Albums Carousel:
+Create a separate component called Carousel.
+
+Conditional Rendering: upon clicking the Collapse button:
+
+The text within the button must change to "Show All"
+
+Instead of a Grid of Cards, the Carousel component must be displayed.
+
+Make use of the Swiper open-source UI library to build the Carousel.
+
+Make sure that you make the Carousel component re-usable i.e. it should be built in such a way that if in the future you are required to change the content from cards to some other component or even text, you should be able to do so without making any changes to the carousel except of passing the new data in the form of props.
+
+Make sure that the Carousel is responsive i.e. the number of cards getting displayed should vary as per the screen size appropriately and not just show a fixed number of cards no matter what the size is.
+
+Export the Left and Right navigation buttons SVG from the Figma file.
+
+Once you have a well-functioning Carousel, include the left and right navigation buttons in the carousel. Create separate components for the left and right navigation buttons.
+
+Implementation Requirements for New Albums Section:
+Similarly, build the Album section for New Albums, just as you have built the Top Albums.
+image
+
+This time you must get the data from https://qtify-backend.labs.crio.do/albums/new
+
+Re-use the appropriate components instead of coding everything from scratch.
+
+Introduction
+You’ll create a Songs section that has a Tab component displaying carousel within each tab, allowing users to filter the songs on the basis of their genres.
+
+
+Songs Filter
+You need to implement the songs filter feature for QTify by using a Tab component.
+
+By default, the All tab must be selected and the user must be able to see the songs of all genres.
+
+image
+
+The user can choose any of the 5 tabs: All, Rock, Pop, Jazz, Blues.
+
+Whatever tab the user chooses, the carousel within the section must show the songs of only that particular genre.
+
+Implementation Requirements for Songs Section:
+Re-use the Section component to build just a section for the Song Filter Section.
+The title must be "Songs".
+
+Display the songs data instead of the albums data, by fetching the songs data from https://qtify-backend.labs.crio.do/songs.
+
+Use the Tab component of Material UI to create a Tab.
+
+Instead of default Tabs, create tabs as per our genre by getting the genres data from https://qtify-backend.labs.crio.do/genres.
+
+You’ll notice that the Tabs UI has a different styling than that required by the Figma file. Apply custom styling using CSS to make the UI appear as close to the Figma design as possible.
+
+Make the filter function properly such that only the chosen tab’s genre songs must be displayed in the carousel.
+
+There must be no Show All button. So, you must change the code in such a way that for the Songs section, there must be no Show All button, so no option to expand the Carousel into a grid.
+
+image
+
+Also, in the chip within the cards used for displaying songs, we do not have Follows, instead we must have Likes.
+You must not create separate components for these differences of the Songs component, rather make modifications in the same ones, such that these changes are reflected only and only for the Songs section.

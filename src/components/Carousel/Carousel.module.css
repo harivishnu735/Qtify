@@ -1,0 +1,33 @@
+.wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.leftNav, .rightNav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 38px;
+  height: 38px;
+  background-color: var(--color-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.leftNav:hover, .rightNav:hover {
+  background-color: #2fb543;
+}
+
+.leftNav {
+  left: 10px;
+}
+
+.rightNav {
+  right: 10px;
+}

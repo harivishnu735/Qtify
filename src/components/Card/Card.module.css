@@ -1,0 +1,62 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 159px;
+  cursor: pointer;
+}
+
+.card {
+  width: 159px;
+  height: 205px;
+  background-color: var(--color-white);
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.image {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.banner {
+  height: 35px;
+  background-color: var(--color-white);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.chip {
+  background-color: var(--color-black) !important;
+  color: var(--color-white) !important;
+  font-family: 'Poppins', sans-serif;
+  font-size: 10px !important;
+  font-weight: 500 !important;
+}
+
+.titleWrapper {
+  width: 100%;
+  padding: 8px 0;
+}
+
+.title {
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: var(--color-white);
+  text-align: left;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
